@@ -1,0 +1,33 @@
+body {
+  font-family: serif;
+  background-color: #222;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+  display: grid; /* Use CSS Grid for layout */
+  grid-template-columns: repeat(4, 1fr); /* Create 4 columns */
+  grid-template-rows: repeat(5, 1fr); /* Create 5 rows */
+  gap: 20px; /* Add spacing between grid items */
+  min-height: 200vh; /* Ensure enough vertical space */
+}.container {
+  display: contents; /* Make container blend with grid */
+}.journal-entry {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  font-size: 14px;
+  /* Randomly span across 1-2 columns and 1-2 rows */
+  grid-column: span 1 / span 2; 
+  grid-row: span 1 / span 2;
+}
+
+/* Randomize placement within the grid */.journal-entry:nth-child(1) { grid-column-start: 1; grid-row-start: 1; }.journal-entry:nth-child(2) { grid-column-start: 3; grid-row-start: 2; }.journal-entry:nth-child(3) { grid-column-start: 2; grid-row-start: 4; }.journal-entry:nth-child(4) { grid-column-start: 1; grid-row-start: 3; }
+/*... add more for each entry, varying start positions... */.journal-entry:nth-child(13) { grid-column-start: 4; grid-row-start: 5; }
+
+h1 {
+  display: none;
+}.journal-entry h2 {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
